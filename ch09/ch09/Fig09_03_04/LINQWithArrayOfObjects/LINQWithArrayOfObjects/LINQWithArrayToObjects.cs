@@ -10,17 +10,18 @@ using System.Linq;
 
 class LINQWithArrayOfObjects
 {
-   static void Main()
-   {
-      // initialize array of employees
-      var employees = new[] {
+    static void Main()
+    {
+        // initialize array of employees
+        var employees = new[] {
          new Employee("Jason", "Red", 5000M),
          new Employee("Ashley", "Green", 7600M),
          new Employee("Matthew", "Indigo", 3587.5M),
          new Employee("James", "Indigo", 4700.77M),
          new Employee("Luke", "Indigo", 6200M),
          new Employee("Jason", "Blue", 3200M),
-         new Employee("Wendy", "Brown", 4236.4M)};
+         new Employee("Wendy", "Brown", 4236.4M),
+          new Employee("Adam", "Andrews", 8000M)};
 
       // display all employees
       Console.WriteLine("Original array:");
@@ -32,12 +33,12 @@ class LINQWithArrayOfObjects
       // filter a range of salaries using && in a LINQ query
       var between4K6K =
          from e in employees
-         where (e.MonthlySalary >= 4000M) && (e.MonthlySalary <= 6000M)
+         where (e.MonthlySalary >= 4236.4M) && (e.MonthlySalary <= 6000M)
          select e;
 
       // display employees making between 4000 and 6000 per month
       Console.WriteLine("\nEmployees earning in the range " +
-         $"{4000:C}-{6000:C} per month:");
+         $"{4236.4:C}-{6000:C} per month:");
       foreach (var element in between4K6K)
       {
          Console.WriteLine(element);
@@ -46,16 +47,16 @@ class LINQWithArrayOfObjects
       // order the employees by last name, then first name with LINQ
       var nameSorted =
          from e in employees
-         orderby e.LastName, e.FirstName
+         orderby e.FirstName, e.LastName
          select e;
 
       // header
-      Console.WriteLine("\nFirst employee when sorted by name:");
+      Console.WriteLine("\nLast employee when sorted by name:");
 
       // attempt to display the first result of the above LINQ query
       if (nameSorted.Any())
       {
-         Console.WriteLine(nameSorted.First());
+         Console.WriteLine(nameSorted.Last());
       }
       else
       {
@@ -86,7 +87,8 @@ class LINQWithArrayOfObjects
          Console.WriteLine(element);
       }
 
-      Console.WriteLine();
+      Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
    }
 } 
 
