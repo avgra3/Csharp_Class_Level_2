@@ -33,12 +33,12 @@ class LINQWithArrayOfObjects
       // filter a range of salaries using && in a LINQ query
       var between4K6K =
          from e in employees
-         where (e.MonthlySalary >= 4236.4M) && (e.MonthlySalary <= 6000M)
+         where (e.MonthlySalary > 4000M) // && (e.MonthlySalary <= 6000M)
          select e;
 
       // display employees making between 4000 and 6000 per month
-      Console.WriteLine("\nEmployees earning in the range " +
-         $"{4236.4:C}-{6000:C} per month:");
+      Console.WriteLine("\nEmployees earning greater than " +
+         $"{4000:C} per month:");
       foreach (var element in between4K6K)
       {
          Console.WriteLine(element);
