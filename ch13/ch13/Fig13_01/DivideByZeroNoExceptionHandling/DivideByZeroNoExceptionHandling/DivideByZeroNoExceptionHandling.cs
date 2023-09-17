@@ -1,4 +1,9 @@
-﻿// Fig. 13.1: DivideByZeroNoExceptionHandling.cs
+﻿//
+// Antony Gradillas 09/17/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 13.1: DivideByZeroNoExceptionHandling.cs
 // Integer division without exception handling.
 using System;
 
@@ -18,7 +23,11 @@ class DivideByZeroNoExceptionHandling
       var result = numerator / denominator;
       Console.WriteLine(
          $"\nResult: {numerator} / {denominator} = {result}");
-   }
+
+     // Pause logic
+     Console.WriteLine("Press any key to continue.");
+     Console.ReadKey();
+    }
 }
 
 
