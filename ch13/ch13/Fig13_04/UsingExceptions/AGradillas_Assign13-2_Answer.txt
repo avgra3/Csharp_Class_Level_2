@@ -1,0 +1,7 @@
+﻿//
+// Antony Gradillas 09/17/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+
+Question 1 Response: The purpose of line 49 is to parse an integer value. However, in Fig13_05, the value pased into the int.Parse() is a string which can not be parsed to an integer. Since the code is contained in the a try statement, the app handles the FormatException and then throws a new exception, wrapping it with the initial exception.
