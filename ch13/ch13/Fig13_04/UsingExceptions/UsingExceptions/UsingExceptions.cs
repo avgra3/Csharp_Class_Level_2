@@ -1,4 +1,9 @@
-﻿// Fig. 13.4: UsingExceptions.cs
+﻿//
+// Antony Gradillas 09/11/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 13.4: UsingExceptions.cs
 // finally blocks always execute, even when no exception occurs.
 
 using System;
@@ -44,7 +49,10 @@ class UsingExceptions
          Console.WriteLine(
             "Caught exception from ThrowExceptionCatchRethrow in Main");
       }
-   }
+
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
+    }
 
    // no exceptions thrown
    static void DoesNotThrowException()
