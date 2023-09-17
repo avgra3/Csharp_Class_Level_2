@@ -1,0 +1,9 @@
+Q1 Response: We received an unhandled exception due to us entering an invalid integer. What we are entering can not be converted to an integer. We would need to adjust the code to accept these kinds of values.
+
+Q2 Response: What we are entering can not be converted to an integer. We would need to adjust the code to accept these kinds of values.
+
+Q3 Response: We did not receive an error as the values we entered can be converted to valid integers.
+
+Q4 Response: The answer is correct for integer division. If we wanted a more precise answer we would need to change the exepcted input types.
+
+Q5 Response: The app takes in strings fronm the user. The values taken in are then converted to integers. If the values cannot be converted to integers, then a format execption is thrown. If the values are valid, then the app attempts to divide the numerator by the denominator. Errors will be raised if other mathematical errors occur. The result will be in integer division, so if there is a remainder value, it will be missing from the output.
