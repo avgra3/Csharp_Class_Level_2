@@ -1,4 +1,9 @@
-﻿// Fig. 15.48: VisualInheritanceTestForm.cs
+﻿//
+// Antony Gradillas 09/24/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 15.48: VisualInheritanceTestForm.cs
 // Derived Form using visual inheritance.
 using System;
 using System.Windows.Forms;

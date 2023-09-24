@@ -28,59 +28,59 @@ namespace VisualInheritanceBase
       /// </summary>
       private void InitializeComponent()
       {
-         this.learnMoreButton = new System.Windows.Forms.Button();
-         this.twoLabel = new System.Windows.Forms.Label();
-         this.oneLabel = new System.Windows.Forms.Label();
-         this.SuspendLayout();
-         // 
-         // learnMoreButton
-         // 
-         this.learnMoreButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.learnMoreButton.Location = new System.Drawing.Point(12, 83);
-         this.learnMoreButton.Name = "learnMoreButton";
-         this.learnMoreButton.Size = new System.Drawing.Size(145, 59);
-         this.learnMoreButton.TabIndex = 20;
-         this.learnMoreButton.Text = "Learn More";
-         this.learnMoreButton.Click += new System.EventHandler(this.learnMoreButton_Click);
-         // 
-         // twoLabel
-         // 
-         this.twoLabel.BackColor = System.Drawing.Color.LightYellow;
-         this.twoLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-         this.twoLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.twoLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-         this.twoLabel.Location = new System.Drawing.Point(12, 156);
-         this.twoLabel.Name = "twoLabel";
-         this.twoLabel.Size = new System.Drawing.Size(300, 25);
-         this.twoLabel.TabIndex = 19;
-         this.twoLabel.Text = "Copyright 2017, by Deitel && Associates, Inc.";
-         this.twoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-         // 
-         // oneLabel
-         // 
-         this.oneLabel.BackColor = System.Drawing.Color.LightYellow;
-         this.oneLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-         this.oneLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.oneLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-         this.oneLabel.Location = new System.Drawing.Point(12, 19);
-         this.oneLabel.Name = "oneLabel";
-         this.oneLabel.Size = new System.Drawing.Size(300, 47);
-         this.oneLabel.TabIndex = 18;
-         this.oneLabel.Text = "Bugs, Bugs, Bugs";
-         this.oneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-         // 
-         // VisualInheritanceBaseForm
-         // 
-         this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(324, 201);
-         this.Controls.Add(this.learnMoreButton);
-         this.Controls.Add(this.twoLabel);
-         this.Controls.Add(this.oneLabel);
-         this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.Name = "VisualInheritanceBaseForm";
-         this.Text = "Visual Inheritance Base";
-         this.ResumeLayout(false);
+            this.learnMoreButton = new System.Windows.Forms.Button();
+            this.twoLabel = new System.Windows.Forms.Label();
+            this.oneLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // learnMoreButton
+            // 
+            this.learnMoreButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.learnMoreButton.Location = new System.Drawing.Point(12, 83);
+            this.learnMoreButton.Name = "learnMoreButton";
+            this.learnMoreButton.Size = new System.Drawing.Size(145, 59);
+            this.learnMoreButton.TabIndex = 20;
+            this.learnMoreButton.Text = "Learn More";
+            this.learnMoreButton.Click += new System.EventHandler(this.learnMoreButton_Click);
+            // 
+            // twoLabel
+            // 
+            this.twoLabel.BackColor = System.Drawing.Color.LightYellow;
+            this.twoLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.twoLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoLabel.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.twoLabel.Location = new System.Drawing.Point(12, 156);
+            this.twoLabel.Name = "twoLabel";
+            this.twoLabel.Size = new System.Drawing.Size(300, 25);
+            this.twoLabel.TabIndex = 19;
+            this.twoLabel.Text = "Updated 2019 by AGradillas";
+            this.twoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // oneLabel
+            // 
+            this.oneLabel.BackColor = System.Drawing.Color.LightYellow;
+            this.oneLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.oneLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oneLabel.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.oneLabel.Location = new System.Drawing.Point(12, 19);
+            this.oneLabel.Name = "oneLabel";
+            this.oneLabel.Size = new System.Drawing.Size(300, 47);
+            this.oneLabel.TabIndex = 18;
+            this.oneLabel.Text = "VisualInheritance";
+            this.oneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // VisualInheritanceBaseForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(324, 201);
+            this.Controls.Add(this.learnMoreButton);
+            this.Controls.Add(this.twoLabel);
+            this.Controls.Add(this.oneLabel);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "VisualInheritanceBaseForm";
+            this.Text = "Visual Inheritance Base";
+            this.ResumeLayout(false);
 
       }
 

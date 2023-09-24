@@ -1,3 +1,8 @@
+//
+// Antony Gradillas 09/24/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
 // Fig. 15.45: VisualInheritanceBaseForm.cs
 // Base Form for use with visual inheritance.
 using System;
