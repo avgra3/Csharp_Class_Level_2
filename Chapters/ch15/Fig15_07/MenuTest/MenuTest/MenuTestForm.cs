@@ -1,3 +1,8 @@
+//
+// Antony Gradillas 09/24/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
 // Fig. 15.7: MenuTestForm.cs
 // Using Menus to change font colors and styles.
 using System;
@@ -158,7 +163,14 @@ namespace MenuTest
          displayLabel.Font = new Font(displayLabel.Font,
             displayLabel.Font.Style ^ FontStyle.Italic);
       }
-   }
+
+        // Show extreme Yellow message box
+        private void extremeYellowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You just picked Extreme Yellow!", "Yelllllllow",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+    }
 }
 
 
