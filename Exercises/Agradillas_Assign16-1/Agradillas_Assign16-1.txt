@@ -1,0 +1,24 @@
+// Antony Gradillas 10/01/2023
+// CIS262AD - Fall 2023
+// Class 15677
+
+Q1: What does the trim method in the String class?
+A1: The trim method in the String class removes all whitespace at the beginning and end of a string.
+
+Q2: The Substring method can accept 2 parameters, describe them.
+A2: The first parameter is an int to define the starting index for the substring. The second parameter is optional, and is also an int that defines the length of the desired substring.
+
+Q3: If you wanted to join 2 strings together using a String method, which method would you use?
+A3: If we wanted to join 2 strings together using a String method, we would use is the Concat method.
+
+Q4: What is the primary difference between the String class and StringBuilder?
+A4: The primary difference between the String class and StringBuilder class is that the String class produces an immutable string, whereas the StringBuilder object is mutable and thereby is more dynamic. 
+
+Q5: The class StringBuilder has 2 properties, Length and Capacity describe each of them?
+A5: The Length property of Length in StringBuilder defines the current length of characters in the object. Whereas the Capacity parameter defines how much memory is allocated to the object before it would need to allocate more memory.
+
+Q6: Format specifiers are available to control output, what will each of these do {0:d5}, {0,-3}, {0,4}?
+A6:
+{0:d5} => Pads the value with zeros such that it looks like "00000".
+{0,-3} => Right pad the value with spaces for a length of 3.
+{0,4} => Left pads the value with spaces for a length of 4.
