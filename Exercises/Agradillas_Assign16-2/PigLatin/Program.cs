@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// Antony Gradillas 10/01/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +29,10 @@ class Program
 
       // display the translation
       Console.WriteLine($"\nThe Pig Latin sentence is:\n{pigLatin}");
+
+        // Pause logic
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
    }
 
    // translate the word
@@ -32,19 +41,19 @@ class Program
       StringBuilder latin = new StringBuilder(word);
       char firstLetter = latin[0];
 
-      // this code removes the first letter and appends it to the end
-      //
-      // add the code below this comment line to remove the first letter
-
+        // this code removes the first letter and appends it to the end
+        //
+        // add the code below this comment line to remove the first letter
+        latin.Remove(0, 1);
 
 	  // leave this line intact to append the first letter
       latin.Append(firstLetter);
 
-      //
-      // add the code below this comment line to add "ay" to the end of the word
+        //
+        // add the code below this comment line to add "ay" to the end of the word
+        latin.Append("ay");
 
-
-      return latin.ToString();
+        return latin.ToString();
    } 
 }
 /**************************************************************************
