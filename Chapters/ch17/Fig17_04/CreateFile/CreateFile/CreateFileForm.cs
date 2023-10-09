@@ -1,4 +1,9 @@
-﻿// Fig. 17.4: CreateFileForm.cs
+﻿//
+// Antony Gradillas 10/09/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 17.4: CreateFileForm.cs
 // Creating a sequential-access file.
 using System;
 using System.Windows.Forms;
@@ -34,6 +39,8 @@ namespace CreateFile
          // ensure that user clicked "OK"
          if (result == DialogResult.OK)
          {
+                // Needed to get Invalid File error
+                // fileName = "";
             // show error if user specified invalid file
             if (string.IsNullOrEmpty(fileName))
             {
@@ -133,7 +140,24 @@ namespace CreateFile
 
          Application.Exit();
       }
-   }
+
+        // Second Exit Button
+        private void exitButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fileWriter?.Close(); // close StreamWriter and underlying file
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Cannot close file", "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Application.Exit();
+        }
+
+    }
 }
 
 
