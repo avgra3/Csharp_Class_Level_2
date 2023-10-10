@@ -1,146 +1,179 @@
 ﻿//
-// Antony Gradillas 10/09/2023
+// Antony Gradillas 10/10/2023
 // CIS262AD - Fall 2023
 // Class 15677
 //
+// Fig. 17.4: CreateFileForm.cs
+// Creating a sequential-access file.
+using System;
+using System.Windows.Forms;
+using System.IO;
+using BankLibrary;
+
 namespace CreateFile
 {
-   partial class CreateFileForm
-   {
-      /// <summary>
-      /// Required designer variable.
-      /// </summary>
-      private System.ComponentModel.IContainer components = null;
+    public partial class CreateFileForm : BankUIForm
+    {
+        private StreamWriter fileWriter; // writes data to text file
 
-      /// <summary>
-      /// Clean up any resources being used.
-      /// </summary>
-      /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-      protected override void Dispose( bool disposing )
-      {
-         if ( disposing && ( components != null ) )
-         {
-            components.Dispose();
-         }
-         base.Dispose( disposing );
-      }
+        // parameterless constructor
+        public CreateFileForm()
+        {
+            InitializeComponent();
+        }
 
-      #region Windows Form Designer generated code
+        // event handler for Save Button
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            // create and show dialog box enabling user to save file
+            DialogResult result; // result of SaveFileDialog
+            string fileName; // name of file containing data
 
-      /// <summary>
-      /// Required method for Designer support - do not modify
-      /// the contents of this method with the code editor.
-      /// </summary>
-      private void InitializeComponent()
-      {
-            this.exitButton = new System.Windows.Forms.Button();
-            this.enterButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.exitButton2 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // balanceTextBox
-            // 
-            this.balanceTextBox.Size = new System.Drawing.Size(153, 23);
-            // 
-            // lastNameTextBox
-            // 
-            this.lastNameTextBox.Size = new System.Drawing.Size(153, 23);
-            // 
-            // firstNameTextBox
-            // 
-            this.firstNameTextBox.Size = new System.Drawing.Size(153, 23);
-            // 
-            // accountTextBox
-            // 
-            this.accountTextBox.Size = new System.Drawing.Size(153, 23);
-            // 
-            // label4
-            // 
-            this.label4.Size = new System.Drawing.Size(48, 15);
-            // 
-            // label3
-            // 
-            this.label3.Size = new System.Drawing.Size(63, 15);
-            // 
-            // label2
-            // 
-            this.label2.Size = new System.Drawing.Size(64, 15);
-            // 
-            // label1
-            // 
-            this.label1.Size = new System.Drawing.Size(52, 15);
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(228, 234);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(86, 31);
-            this.exitButton.TabIndex = 18;
-            this.exitButton.Text = "Exit";
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // enterButton
-            // 
-            this.enterButton.Enabled = false;
-            this.enterButton.Location = new System.Drawing.Point(132, 234);
-            this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(86, 31);
-            this.enterButton.TabIndex = 17;
-            this.enterButton.Text = "Enter";
-            this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(33, 234);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(86, 31);
-            this.saveButton.TabIndex = 16;
-            this.saveButton.Text = "Save As";
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // exitButton2
-            // 
-            this.exitButton2.Location = new System.Drawing.Point(228, 271);
-            this.exitButton2.Name = "exitButton2";
-            this.exitButton2.Size = new System.Drawing.Size(86, 31);
-            this.exitButton2.TabIndex = 19;
-            this.exitButton2.Text = "Exit2";
-            this.exitButton2.UseVisualStyleBackColor = true;
-            this.exitButton2.Click += new System.EventHandler(this.exitButton2_Click);
-            // 
-            // CreateFileForm
-            // 
-            this.ClientSize = new System.Drawing.Size(354, 351);
-            this.Controls.Add(this.exitButton2);
-            this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.enterButton);
-            this.Controls.Add(this.saveButton);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "CreateFileForm";
-            this.Text = "Creating a Sequential File";
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.accountTextBox, 0);
-            this.Controls.SetChildIndex(this.firstNameTextBox, 0);
-            this.Controls.SetChildIndex(this.lastNameTextBox, 0);
-            this.Controls.SetChildIndex(this.balanceTextBox, 0);
-            this.Controls.SetChildIndex(this.saveButton, 0);
-            this.Controls.SetChildIndex(this.enterButton, 0);
-            this.Controls.SetChildIndex(this.exitButton, 0);
-            this.Controls.SetChildIndex(this.exitButton2, 0);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            using (var fileChooser = new SaveFileDialog())
+            {
+                fileChooser.CheckFileExists = false; // let user create file 
+                result = fileChooser.ShowDialog();
+                fileName = fileChooser.FileName; // name of file to save data
+            }
 
-      }
+            // ensure that user clicked "OK"
+            if (result == DialogResult.OK)
+            {
+                // Needed to get Invalid File error
+                // fileName = "";
+                // show error if user specified invalid file
+                if (string.IsNullOrEmpty(fileName))
+                {
+                    MessageBox.Show("Invalid File Name", "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // save file via FileStream if user specified valid file
+                    try
+                    {
+                        // open file with write access
+                        var output = new FileStream(fileName,
+                           FileMode.OpenOrCreate, FileAccess.Write);
 
-      #endregion
+                        // sets file to where data is written
+                        fileWriter = new StreamWriter(output);
 
-      private System.Windows.Forms.Button exitButton;
-      private System.Windows.Forms.Button enterButton;
-      private System.Windows.Forms.Button saveButton;
-      private System.Windows.Forms.Button exitButton2;
+                        // disable Save button and enable Enter button
+                        saveButton.Enabled = false;
+                        enterButton.Enabled = true;
+                    }
+                    catch (IOException)
+                    {
+                        // notify user if file does not exist
+                        MessageBox.Show("Error opening file", "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        // handler for enterButton Click
+        private void enterButton_Click(object sender, EventArgs e)
+        {
+            // store TextBox values string array
+            string[] values = GetTextBoxValues();
+
+            // determine whether TextBox account field is empty
+            if (!string.IsNullOrEmpty(values[(int)TextBoxIndices.Account]))
+            {
+                // store TextBox values in Record and output it
+                try
+                {
+                    // get account-number value from TextBox
+                    int accountNumber =
+                       int.Parse(values[(int)TextBoxIndices.Account]);
+
+                    // determine whether accountNumber is valid
+                    if (accountNumber > 0)
+                    {
+                        // Record containing TextBox values to output
+                        var record = new Record(accountNumber,
+                           values[(int)TextBoxIndices.First],
+                           values[(int)TextBoxIndices.Middle],
+                           values[(int)TextBoxIndices.Last],
+                           decimal.Parse(values[(int)TextBoxIndices.Balance]));
+
+                        // write Record to file, fields separated by commas
+                        fileWriter.WriteLine(
+                           $"{record.Account},{record.FirstName}," +
+                           $"{record.MiddleName},{record.LastName},{record.Balance}");
+                    }
+                    else
+                    {
+                        // notify user if invalid account number
+                        MessageBox.Show("Invalid Account Number", "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Error Writing to File", "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Invalid Format", "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            ClearTextBoxes(); // clear TextBox values
+        }
+
+        // handler for exitButton Click
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fileWriter?.Close(); // close StreamWriter and underlying file
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Cannot close file", "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Application.Exit();
+        }
+
+        // Second Exit Button
+        private void exitButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fileWriter?.Close(); // close StreamWriter and underlying file
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Cannot close file", "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Application.Exit();
+        }
+
     }
 }
+
+
+
+/**************************************************************************
+ * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *
+ * Pearson Education, Inc. All Rights Reserved.                           *
+ *                                                                        *
+ * DISCLAIMER: The authors and publisher of this book have used their     *
+ * best efforts in preparing the book. These efforts include the          *
+ * development, research, and testing of the theories and programs        *
+ * to determine their effectiveness. The authors and publisher make       *
+ * no warranty of any kind, expressed or implied, with regard to these    *
+ * programs or to the documentation contained in these books. The authors *
+ * and publisher shall not be liable in any event for incidental or       *
+ * consequential damages in connection with, or arising out of, the       *
+ * furnishing, performance, or use of these programs.                     *
+ *************************************************************************/

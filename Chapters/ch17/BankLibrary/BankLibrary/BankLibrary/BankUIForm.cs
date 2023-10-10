@@ -1,4 +1,9 @@
-﻿// Fig. 17.2: BankUIForm.cs
+﻿//
+// Antony Gradillas 10/10/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 17.2: BankUIForm.cs
 // A reusable Windows Form for the examples in this chapter.
 using System;
 using System.Windows.Forms;
@@ -7,10 +12,10 @@ namespace BankLibrary
 {
    public partial class BankUIForm : Form
    {
-      protected int TextBoxCount { get; set; } = 4; // number of TextBoxes
+      protected int TextBoxCount { get; set; } = 5; // number of TextBoxes
 
       // enumeration constants specify TextBox indices
-      public enum TextBoxIndices { Account, First, Last, Balance }
+      public enum TextBoxIndices { Account, First, Middle, Last, Balance }
 
       // parameterless constructor
       public BankUIForm()
@@ -45,6 +50,7 @@ namespace BankLibrary
             // set array values to TextBox values
             accountTextBox.Text = values[(int)TextBoxIndices.Account];
             firstNameTextBox.Text = values[(int)TextBoxIndices.First];
+            middleNameTextBox.Text = values[(int)TextBoxIndices.Middle];
             lastNameTextBox.Text = values[(int)TextBoxIndices.Last];
             balanceTextBox.Text = values[(int)TextBoxIndices.Balance];
          }
@@ -54,10 +60,11 @@ namespace BankLibrary
       public string[] GetTextBoxValues()
       {
          return new string[] {
-            accountTextBox.Text, firstNameTextBox.Text,
+            accountTextBox.Text, firstNameTextBox.Text, middleNameTextBox.Text,
             lastNameTextBox.Text, balanceTextBox.Text};
       }
-   }
+
+    }
 }
 
 

@@ -1,3 +1,8 @@
+//
+// Antony Gradillas 10/10/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
 // Fig. 17.3: Record.cs
 // Class that represents a data record.
 namespace BankLibrary
@@ -6,18 +11,21 @@ namespace BankLibrary
    {
       public int Account { get; set; }
       public string FirstName { get; set; }
+
+        public string MiddleName { get; set; }
       public string LastName { get; set; }
       public decimal Balance { get; set; }
 
       // parameterless constructor sets members to default values
-      public Record() : this(0, string.Empty, string.Empty, 0M) { }
+      public Record() : this(0, string.Empty, string.Empty, string.Empty, 0M) { }
 
       // overloaded constructor sets members to parameter values
-      public Record(int account, string firstName,
+      public Record(int account, string firstName, string middleName,
          string lastName, decimal balance)
       {
          Account = account;
          FirstName = firstName;
+            MiddleName = middleName;
          LastName = lastName;
          Balance = balance;
       }
