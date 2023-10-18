@@ -1,4 +1,9 @@
-﻿// Exercise 18.5 Solution: BubbleSortTest.cs
+﻿//
+// Antony Gradillas 10/17/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Exercise 18.5 Solution: BubbleSortTest.cs
 // Test the bubble sort class.
 using System;
 
@@ -22,16 +27,20 @@ public class BubbleSortTest
 
       Console.Write("After: ");
       DisplayArray(data); // display sorted array
-   }
+
+        // End Lines
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
+    }
 
    // sort elements of array with bubble sort                
    public static void BubbleSort(int[] data)
    {
       // loop for SOMETHINGOESHERE - 1 passes
-      for (int pass = 1; pass < SOMETHINGGOESHERE; pass++)
+      for (int pass = 1; pass < data.Length; pass++)
       {
          // loop over elements in array
-         for (int index = 0; index < SOMETHINGGOESHERE - 1; index++)
+         for (int index = 0; index < data.Length - 1; index++)
          {
             // swap adjacent elements if first is greater than second
             if (data[index] > data[index + 1])
@@ -46,8 +55,8 @@ public class BubbleSortTest
    public static void Swap(ref int first, ref int second)
    {
       var temporary = first; // store first in temporary  
-      CODEGOESHERE; // replace first with second
-      MORECODEGOESHERE; // put temporary in second      
+      first = second; // replace first with second
+      second = temporary; // put temporary in second      
    }
 
    // method to output values in array
