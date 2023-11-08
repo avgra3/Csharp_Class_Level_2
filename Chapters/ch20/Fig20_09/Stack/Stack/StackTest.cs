@@ -27,10 +27,15 @@ class StackTest
       TestPush(nameof(doubleStack), intStack, intElements);
       // pop ints from intStack
       TestPop(nameof(doubleStack), intStack);
-   }
 
-   // test Push method
-   private static void TestPush<T>(string name, Stack<T> stack,
+
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
+
+    }
+
+    // test Push method
+    private static void TestPush<T>(string name, Stack<T> stack,
       IEnumerable<T> elements)
    {
       // push elements onto stack

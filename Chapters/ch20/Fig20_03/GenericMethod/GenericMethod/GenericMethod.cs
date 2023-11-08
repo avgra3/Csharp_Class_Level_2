@@ -17,10 +17,14 @@ class GenericMethod
       DisplayArray(doubleArray); // pass a double array argument
       Console.Write("Array charArray contains: ");
       DisplayArray(charArray); // pass a char array argument
-   }
 
-   // output array of all types                           
-   private static void DisplayArray<T>(T[] inputArray)
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
+
+    }
+
+    // output array of all types                           
+    private static void DisplayArray<T>(T[] inputArray)
    {
       foreach (var element in inputArray)
       {

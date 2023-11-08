@@ -22,10 +22,15 @@ class StackTest
       TestPopDouble(); // pop doubles from doubleStack
       TestPushInt(); // push ints onto intStack
       TestPopInt(); // pop ints from intStack
-   }
 
-   // test Push method with doubleStack
-   private static void TestPushDouble()
+
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
+
+    }
+
+    // test Push method with doubleStack
+    private static void TestPushDouble()
    {
       // push elements onto stack
       try

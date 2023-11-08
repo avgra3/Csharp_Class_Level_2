@@ -17,7 +17,9 @@ class OverloadedMethods
       DisplayArray(doubleArray); // pass a double array argument
       Console.Write("Array charArray contains: ");
       DisplayArray(charArray); // pass a char array argument
-   }
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
+    }
 
    // output int array                                 
    private static void DisplayArray(int[] inputArray)
@@ -51,6 +53,7 @@ class OverloadedMethods
 
       Console.WriteLine();
    }
+
 }
 
 /**************************************************************************

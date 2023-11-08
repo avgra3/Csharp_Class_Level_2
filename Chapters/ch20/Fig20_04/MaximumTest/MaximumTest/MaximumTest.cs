@@ -11,11 +11,15 @@ class MaximumTest
          $"Maximum of 6.6, 8.8 and 7.7 is {Maximum(6.6, 8.8, 7.7)}");
       Console.WriteLine("Maximum of pear, apple and orange is " +
          $"{Maximum("pear", "apple", "orange")}");
-   }
 
-   // generic function determines the
-   // largest of the IComparable<T> objects
-   private static T Maximum<T>(T x, T y, T z) where T : IComparable<T>
+        Console.WriteLine("Press any key to continue.");
+        Console.ReadKey();
+
+    }
+
+    // generic function determines the
+    // largest of the IComparable<T> objects
+    private static T Maximum<T>(T x, T y, T z) where T : IComparable<T>
    {
       var max = x; // assume x is initially the largest
 
