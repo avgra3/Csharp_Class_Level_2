@@ -21,7 +21,7 @@ namespace DisplayTable
         }
 
         // Entity Framework DbContext
-        private BookExamples.BooksEntities dbcontext = new BookExamples.BooksEntities();
+        private readonly BookExamples.BooksEntities dbcontext = new BookExamples.BooksEntities();
 
         // Load data from database into DataGridView
         private void DisplayAuthorsTable_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace DisplayTable
 
         // Click event handler for the Save Button in the
         // BindingNavigator saves the changes made to the data
-        private void authorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void AuthorBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             Validate(); // Validate the input fields
             authorBindingSource.EndEdit(); // Complete current edit, if any

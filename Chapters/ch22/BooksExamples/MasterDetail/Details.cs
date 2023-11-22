@@ -1,4 +1,9 @@
-﻿// Fig. 22.37: Details.cs
+﻿//
+// Antony Gradillas 11/21/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 22.37: Details.cs
 // Using a DataGridView to display details based on a selection.
 using System;
 using System.Data.Entity;
