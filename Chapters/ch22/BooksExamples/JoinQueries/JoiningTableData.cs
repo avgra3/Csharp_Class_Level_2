@@ -1,4 +1,9 @@
-﻿// Fig. 22.30: JoiningTableData.cs
+﻿//
+// Antony Gradillas 11/21/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 22.30: JoiningTableData.cs
 // Using LINQ to perform a join and aggregate data across tables.
 using System;
 using System.Linq;

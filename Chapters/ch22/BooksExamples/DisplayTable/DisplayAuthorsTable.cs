@@ -1,4 +1,9 @@
-﻿// Fig. 22.22: DisplayAuthorsTable.cs
+﻿//
+// Antony Gradillas 11/21/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 22.22: DisplayAuthorsTable.cs
 // Displaying data from a database table in a DataGridView.
 using System;
 using System.Data.Entity;

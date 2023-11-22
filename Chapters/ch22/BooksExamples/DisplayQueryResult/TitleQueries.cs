@@ -1,4 +1,9 @@
-﻿// Fig. 22.26: TitleQueries.cs
+﻿//
+// Antony Gradillas 11/21/2023
+// CIS262AD - Fall 2023
+// Class 15677
+//
+// Fig. 22.26: TitleQueries.cs
 // Displaying the result of a user-selected query in a DataGridView.
 using System;
 using System.Data.Entity;
@@ -61,7 +66,30 @@ namespace DisplayQueryResult
 
          titleBindingSource.MoveFirst(); // move to first entry
       }
-   }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            // Takes in the input, removing leading and trailing whitespace
+            var searchText = SearchTextBox.Text.Trim();
+            // set LINQ query
+            titleBindingSource.DataSource =
+                dbcontext.Titles.Local
+                .Where(book => book.Title1.Contains(searchText))
+                .OrderBy (book => book.Title1);
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            // Reset text box value to empty
+            SearchTextBox.Text = string.Empty;
+
+            // set LINQ query
+            titleBindingSource.DataSource =
+                dbcontext.Titles.Local
+                .OrderBy(book => book.Title1);
+
+        }
+    }
 }
 
 /**************************************************************************
