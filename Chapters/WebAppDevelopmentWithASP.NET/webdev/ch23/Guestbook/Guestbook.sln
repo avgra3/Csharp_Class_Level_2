@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Guestbook", ".", "{A892F99B-AF66-4E37-A321-8DD934C37B84}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51167"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Downloads\Csharp_Class_Level_2\Chapters\WebAppDevelopmentWithASP.NET\webdev\ch23\Guestbook\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51167\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51167"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\Downloads\Csharp_Class_Level_2\Chapters\WebAppDevelopmentWithASP.NET\webdev\ch23\Guestbook\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51167\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51167"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A892F99B-AF66-4E37-A321-8DD934C37B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A892F99B-AF66-4E37-A321-8DD934C37B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B590FBBD-C244-4E24-83A9-51B3D5716162}
+	EndGlobalSection
+EndGlobal
